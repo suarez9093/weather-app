@@ -1,4 +1,4 @@
-import React, { Fragment, useState } from "react";
+import React, { Fragment} from "react";
 import { Form, FormGroup, Input, Label, Button } from "reactstrap";
 
 function SearchBar({handleFormSubmit, 

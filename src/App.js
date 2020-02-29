@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import Cards from "./components/Cards"
+// import Cards from "./components/Cards"
 import { Container, Col, Row } from "reactstrap";
-import ReactMapGL, { Marker } from "react-map-gl"
+import ReactMapGL from "react-map-gl"
 import 'mapbox-gl/dist/mapbox-gl.css';
 import API from "./utils/API"
 import SearchBar from "./components/Searchbar"
@@ -26,9 +26,9 @@ function App() {
 
   console.log('markerCount: ',markerCount)
 
-  useEffect(() => {
-    loadWeather()
-  }, [])
+  // useEffect(() => {
+  //   loadWeather()
+  // }, [])
 
   // Functions
   // =====================================================
@@ -47,12 +47,12 @@ function App() {
     API.searchWeather(55, 37, searchField).then(res => setMarkerCount(res.data.list))
     setSearchField('')
   }
-  function loadWeather() {
-    API.searchWeather(55.5, 37.5, 10)
-      .then(res => res.data.list)
-      .then(data => setLocations(data))
-    console.log(locations)
-  }
+  // function loadWeather() {
+  //   API.searchWeather(55.5, 37.5, 10)
+  //     .then(res => res.data.list)
+  //     .then(data => setLocations(data))
+  //   console.log(locations)
+  // }
 
   function onMarkerSelect(location) {
     setSelectedMarker(location)
