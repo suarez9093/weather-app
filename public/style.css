@@ -1,0 +1,30 @@
+.border {
+  border: 2px solid black;
+}
+/* Header */
+header {
+  background-color: yellow;
+  padding: 1em;
+  margin-bottom: 1em;
+}
+.header-item-width {
+  width: 5em;
+}
+
+input {
+  border: 1px solid black;
+}
+
+.container {
+  height: 50%;
+  width: 50%;
+  display: flex;
+}
+.mapContainer {
+  /* position: static; */
+  display: inline;
+  height: 100% !important;
+}
+.pointer {
+  width: 3em
+}
