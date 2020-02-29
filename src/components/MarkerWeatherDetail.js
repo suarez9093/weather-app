@@ -7,7 +7,7 @@ function WeatherDetail({onMarkerSelect}){
         return <h3>Loading</h3>
     }
 
-    console.log('Selected Marker',onMarkerSelect)
+    // console.log('Selected Marker',onMarkerSelect)
     return(
         <div>
         

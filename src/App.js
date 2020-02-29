@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import Cards from "./components/Cards"
+// import Cards from "./components/Cards"
 import { Container, Col, Row } from "reactstrap";
-import ReactMapGL, { Marker } from "react-map-gl"
+import ReactMapGL from "react-map-gl"
 import 'mapbox-gl/dist/mapbox-gl.css';
 import API from "./utils/API"
 import SearchBar from "./components/Searchbar"
@@ -9,8 +9,12 @@ import WeatherDetail from "./components/MarkerWeatherDetail"
 import MarkerImage from "./components/MarkerImage"
 
 function App() {
+  // State
+  // =====================================================
   const [locations, setLocations] = useState([])
-  const [ selectedMarker, setSelectedMarker ] = useState()
+  const [selectedMarker, setSelectedMarker] = useState()
+  const [markerCount, setMarkerCount] = useState()
+  const [searchField, setSearchField] = useState()
 
   const [viewport, setViewPort] = useState({
     latitude: 55.5, // needs to be dynamic
@@ -20,26 +24,51 @@ function App() {
     height: '60vh'
   })
 
-  useEffect(() => {
-    loadWeather()
-  }, [])
-  
-  function loadWeather() {
-    API.searchWeather(55.5, 37.5, 10)
-      .then(res => res.data.list)
-      .then(data => setLocations(data))
-      console.log(locations)
-  }
+  console.log('markerCount: ',markerCount)
 
-  function onMarkerSelect(location){
+  // useEffect(() => {
+  //   loadWeather()
+  // }, [])
+
+  // Functions
+  // =====================================================
+
+  function handleInputChange(e) {
+      const { value } = e.target
+      setSearchField(value)
+  }
+  
+
+  function handleFormSubmit(e) {
+    const { value } = e.target
+    console.log('value',value)
+    setSearchField(value)
+    e.preventDefault()
+    API.searchWeather(55, 37, searchField).then(res => setMarkerCount(res.data.list))
+    setSearchField('')
+  }
+  // function loadWeather() {
+  //   API.searchWeather(55.5, 37.5, 10)
+  //     .then(res => res.data.list)
+  //     .then(data => setLocations(data))
+  //   console.log(locations)
+  // }
+
+  function onMarkerSelect(location) {
     setSelectedMarker(location)
   }
 
+  // Content
+  // =====================================================
   return (
     <Container fluid={true}>
       <Row>
         <Col>
-          <SearchBar />
+          <SearchBar
+            handleFormSubmit={handleFormSubmit}
+            handleInputChange={handleInputChange}
+            searchField={searchField}
+          />
         </Col>
       </Row>
       <Row>
@@ -50,15 +79,19 @@ function App() {
             mapboxApiAccessToken={process.env.REACT_APP_MAPBOX_API_KEY}
             onViewportChange={setViewPort}
           >
-            <MarkerImage onMarkerSelect ={onMarkerSelect}locations={locations}/>
-  
+            <MarkerImage
+              onMarkerSelect={onMarkerSelect}
+              // locations={locations}
+              markerCount={markerCount}
+            />
+
           </ReactMapGL>
         </Col>
       </Row>
-     
+
       <Row>
         <Col>
-        <WeatherDetail onMarkerSelect={onMarkerSelect}/>
+          <WeatherDetail onMarkerSelect={onMarkerSelect} />
         </Col>
       </Row>
     </Container>

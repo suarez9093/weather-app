@@ -12,8 +12,8 @@ export default {
     searchWeather: (lat, lon, count) => {
         const coordinates = `lat=${lat}&lon=${lon}&cnt=${count}`
         const URL = endpoint + coordinates + "&appid=" + API_KEY
-        console.log('URL: ',URL)
-        console.log(lat,lon);
+        // console.log('URL: ',URL)
+        // console.log(lat,lon);
         
         return axios.get(URL);
     },
