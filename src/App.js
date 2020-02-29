@@ -30,7 +30,7 @@ function App() {
       .then(data => setLocations(data))
       console.log(locations)
   }
-  
+
   function onMarkerSelect(location){
     setSelectedMarker(location)
   }
@@ -55,10 +55,7 @@ function App() {
           </ReactMapGL>
         </Col>
       </Row>
-      <Col>
-        {/* <Cards className="border" /> */}
-        {locations.map(data => console.log(data))}
-      </Col>
+     
       <Row>
         <Col>
         <WeatherDetail onMarkerSelect={onMarkerSelect}/>
