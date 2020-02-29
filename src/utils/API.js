@@ -4,7 +4,7 @@ import axios from "axios"
 // const endpoint = "http://api.openweathermap.org/data/2.5/find?lat=55.5&lon=37.5&cnt=10"
 const endpoint = "http://api.openweathermap.org/data/2.5/find?"
 // const API_KEY = process.env.REACT_APP_WEATHER_API_KEY
-const API_KEY = "76479de685af99998156cb1cc78930b2"
+const API_KEY = process.env.REACT_APP_WEATHER_API_KEY
 
 export default {
     
