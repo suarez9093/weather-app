@@ -13,8 +13,8 @@ function App() {
   const [ selectedMarker, setSelectedMarker ] = useState()
 
   const [viewport, setViewPort] = useState({
-    latitude: 55.5,
-    longitude: 37.5,
+    latitude: 55.5, // needs to be dynamic
+    longitude: 37.5, // dynamic
     zoom: 10,
     width: '100vw',
     height: '60vh'
@@ -23,15 +23,16 @@ function App() {
   useEffect(() => {
     loadWeather()
   }, [])
-
-  function onMarkerSelect(location){
-    setSelectedMarker(location)
-  }
+  
   function loadWeather() {
     API.searchWeather(55.5, 37.5, 10)
       .then(res => res.data.list)
       .then(data => setLocations(data))
       console.log(locations)
+  }
+
+  function onMarkerSelect(location){
+    setSelectedMarker(location)
   }
 
   return (
@@ -54,10 +55,7 @@ function App() {
           </ReactMapGL>
         </Col>
       </Row>
-      <Col>
-        {/* <Cards className="border" /> */}
-        {locations.map(data => console.log(data))}
-      </Col>
+     
       <Row>
         <Col>
         <WeatherDetail onMarkerSelect={onMarkerSelect}/>
