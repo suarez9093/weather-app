@@ -2,22 +2,24 @@ import React from 'react';
 import { Marker } from "react-map-gl"
 import image from "./img/marker.jpg"
 
-function MarkerImage({locations, onMarkerSelect}){
+function MarkerImage({locations, markerCount, onMarkerSelect}){
 
     return(
         <div>
-            {locations.map(l => (
+            {!markerCount ? null : 
+            markerCount.map(marker => (
               <Marker 
-              key={l.id}
-              latitude={l.coord.lat} 
-              longitude={l.coord.lon} 
+              key={marker.id}
+              latitude={marker.coord.lat} 
+              longitude={marker.coord.lon} 
               offsetLeft={-20} 
               offsetTop={-10}>
-              <button onClick={() => onMarkerSelect(l)}>
+              <button onClick={() => onMarkerSelect(marker)}>
                 <img className="pointer" src={image} alt="pointer" />
               </button>
             </Marker>
-            ))}
+            ))
+}
         </div>
     
     )
