@@ -5,17 +5,18 @@ function SearchBar({ handleFormSubmit, handleInputChange, searchField }) {
 
     return (
         <Fragment>
-
-            <div className="container">
-                <input
-                    className="searchbar"
-                    type="text" name="markerCount"
-                    value={searchField}
-                    id="markerCount"
-                    placeholder="Generate Random weather points"
-                    onChange={handleInputChange}
-                />
-                <Button id="formBtn" onClick={handleFormSubmit} color="primary">Search</Button>
+            <div className='container container-right'>
+                <form class="form" action="#" method="POST">
+                    <input className=""
+                        type="text" name="markerCount"
+                        value={searchField}
+                        id="markerCount"
+                        placeholder="Search points"
+                        onChange={handleInputChange} />
+                    <br />
+                    <br />
+                    <button className='btn btn-primary' onClick={handleFormSubmit}>Search</button>
+                </form>
 
             </div>
 

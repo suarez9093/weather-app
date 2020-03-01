@@ -50,7 +50,8 @@ function Home() {
         handleInputChange={handleInputChange}
         searchField={searchField}
       />
-
+<br/>
+<br/>
       <ReactMapGL
         {...viewport}
         mapStyle={"mapbox://styles/suarez9093/ck773vm2e08i91iqi1m48zfss"}
@@ -62,6 +63,7 @@ function Home() {
           markerCount={markerCount}
         />
       </ReactMapGL>
+    
       <MarkerWeatherDetail selectedMarker={selectedMarker} />
     </div>
   )
