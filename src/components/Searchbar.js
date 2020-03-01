@@ -6,7 +6,7 @@ function SearchBar({ handleFormSubmit, handleInputChange, searchField }) {
     return (
         <Fragment>
 
-            <div className="search-container">
+            <div className="container">
                 <input
                     className="searchbar"
                     type="text" name="markerCount"

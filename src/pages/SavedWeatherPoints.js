@@ -24,6 +24,7 @@ function SavedWeatherPoints() {
         API.deleteWeather(id).then(res => {
             loadWeather()
         })
+        alert('Deleted!')
 
     };
 
@@ -44,6 +45,10 @@ function SavedWeatherPoints() {
                             <CardText>Feels Like: {weather.feelsLike}</CardText>
                             <CardText>Latitude: {weather.latitude}</CardText>
                             <CardText>Longitude: {weather.longitude}</CardText>
+                           {/* <Link to={`/saved/${weather._id}`}>View city weather </Link> */}
+                            <br />
+                            <br />
+                            
                             <Button color="danger" onClick={() => handleDeleteWeather(weather._id)}>Delete this weather point</Button>
                         </CardBody>
                     </Card>

@@ -1,22 +1,80 @@
 body {
-  margin: 0
+  margin: 0;
+  font-family: "Ubuntu", "sans-serif";
+  font-size: 1.125rem;
+  line-height: 1.5;
 }
+/* ====================================
+          Typography
+======================================= */
 
-
-
-.search-container {
-  text-align: center;
+h1 {
+  font-family: "Lora", "sans-serif";
+  font-weight: 400;
+  margin: 0;
 }
-.searchbar {
-  width: 20em;
-  margin: 1em
+.header-subtitle {
+  color: #1792D2;
+  text-transform: uppercase;
+  letter-spacing: .25em;
+  font-size: .75rem;
+  font-weight: 700;
+  margin: 0;
 }
-
+/* ====================================
+          Layout
+======================================= */
 .container {
-  height: 50%;
-  width: 50%;
+  width: 90%;
+  max-width: 900px;
+  margin: 0 auto;
+}
+.container-flex {
   display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+header {
+  background-color: #f8f8f8;
+  padding: 1em 0;
+  margin-bottom: 1em
+}
+.header-title-container {
+  margin-bottom: 1em;
+}
+/* navigation */
+.navigation-list {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  /* border: 1px solid black; */
+  padding-left: 0;
+  margin: 0; 
+  align-items: center;
+}
+.navigation-list-item {
+  margin: .25em 0;
+  margin-left: 1em;
+}
+.navigation-link {
+  text-decoration: none;
+  color: #707070;
+  font-weight: 700;
+  
+}
+.navigation-link:hover, .navigation-link:focus {
+  color: #1792D2;
+}
 
+@media (max-width:675px) {
+  .container-flex {
+    flex-direction: column;
+  }
+  .navigation-list {
+    flex-direction: column;
+  }
+
+  
 }
 .mapContainer {
   /* position: static; */
