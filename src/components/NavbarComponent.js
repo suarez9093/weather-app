@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-function NavbarComponent() {
+function NavbarComponent({searchField, handleFormSubmit, handleInputChange}) {
     return (
 
         <header>
@@ -12,6 +12,13 @@ function NavbarComponent() {
                 </div>
                 <nav className="navigation">
                     <ul className="navigation-list">
+                        <li className="navigation-list-item"> <input className=""
+                        type="text" name="markerCount"
+                        value={searchField}
+                        id="markerCount"
+                        placeholder="Search points"
+                        onChange={handleInputChange} /></li>
+                        <li className="navigation-list-item"><button className='btn btn-primary' onClick={handleFormSubmit}>Search</button></li>
                         <li className="navigation-list-item"><Link to="/" className="navigation-link">Home</Link></li>
                         <li className="navigation-list-item"><Link to="/saved" className="navigation-link">Saved Weather Points</Link></li>
 

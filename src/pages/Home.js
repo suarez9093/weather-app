@@ -4,6 +4,7 @@ import API from "../utils/API"
 import SearchBar from "../components/Searchbar"
 import MarkerWeatherDetail from "../components/Card"
 import MapMarkerImage from "../components/MapMarkerImage"
+import NavbarComponent from '../components/NavbarComponent'
 
 
 function Home() {
@@ -45,13 +46,11 @@ function Home() {
 
   return (
     <div>
-      <SearchBar
-        handleFormSubmit={handleFormSubmit}
-        handleInputChange={handleInputChange}
-        searchField={searchField}
-      />
-<br/>
-<br/>
+ <NavbarComponent 
+ handleInputChange={handleInputChange}
+ handleFormSubmit={handleFormSubmit}
+ searchField={searchField}
+ />
       <ReactMapGL
         {...viewport}
         mapStyle={"mapbox://styles/suarez9093/ck773vm2e08i91iqi1m48zfss"}
@@ -63,6 +62,11 @@ function Home() {
           markerCount={markerCount}
         />
       </ReactMapGL>
+      {/* <SearchBar
+        handleFormSubmit={handleFormSubmit}
+        handleInputChange={handleInputChange}
+        searchField={searchField}
+      /> */}
     
       <MarkerWeatherDetail selectedMarker={selectedMarker} />
     </div>
