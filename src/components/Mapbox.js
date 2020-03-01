@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {Fragment} from 'react';
 import mapboxgl from 'mapbox-gl';
 require('dotenv').config()
 
@@ -24,9 +24,9 @@ class MapBox extends React.Component {
     }
     render() {
         return (
-            <div>
+            <Fragment>
                 <div ref={el => this.mapContainer = el} className="mapContainer container" />
-            </div>
+            </Fragment>
         )
     }
 }

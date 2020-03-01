@@ -3,6 +3,7 @@ import API from '../utils/API'
 import {
     Card, CardText, CardBody, CardTitle, CardSubtitle, Button
 } from 'reactstrap';
+import NavbarComponent from '../components/NavbarComponent'
 
 
 function SavedWeatherPoints() {
@@ -33,6 +34,8 @@ function SavedWeatherPoints() {
     // console.log('savedWeather: ', typeof savedWeather)
     return (
         <div>
+            <NavbarComponent
+            />
             {!savedWeather ? <h1>No saved Results</h1> :
                 savedWeather.map(weather => (
 
@@ -45,15 +48,15 @@ function SavedWeatherPoints() {
                             <CardText>Feels Like: {weather.feelsLike}</CardText>
                             <CardText>Latitude: {weather.latitude}</CardText>
                             <CardText>Longitude: {weather.longitude}</CardText>
-                           {/* <Link to={`/saved/${weather._id}`}>View city weather </Link> */}
+                            {/* <Link to={`/saved/${weather._id}`}>View city weather </Link> */}
                             <br />
                             <br />
-                            
+
                             <Button color="danger" onClick={() => handleDeleteWeather(weather._id)}>Delete this weather point</Button>
                         </CardBody>
                     </Card>
                 ))}
-                {console.log(savedWeather)}
+            {console.log(savedWeather)}
         </div>
     )
 }
