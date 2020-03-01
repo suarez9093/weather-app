@@ -5,7 +5,7 @@ import ReactMapGL from "react-map-gl"
 import 'mapbox-gl/dist/mapbox-gl.css';
 import API from "./utils/API"
 import SearchBar from "./components/Searchbar"
-import WeatherDetail from "./components/MarkerWeatherDetail"
+import MarkerWeatherDetail from "./components/MarkerWeatherDetail"
 import MarkerImage from "./components/MarkerImage"
 
 function App() {
@@ -54,8 +54,8 @@ function App() {
   //   console.log(locations)
   // }
 
-  function onMarkerSelect(location) {
-    setSelectedMarker(location)
+  function onMarkerSelect(marker) {
+    setSelectedMarker(marker)
   }
 
   // Content
@@ -91,7 +91,7 @@ function App() {
 
       <Row>
         <Col>
-          <WeatherDetail onMarkerSelect={onMarkerSelect} />
+          <MarkerWeatherDetail selectedMarker={selectedMarker} />
         </Col>
       </Row>
     </Container>
