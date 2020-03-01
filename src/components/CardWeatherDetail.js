@@ -5,11 +5,12 @@ import {Card,CardText, CardBody,CardTitle, CardSubtitle,Button
 } from 'reactstrap';
 
 function CardWeatherDetail(props) {
-// console.log('incoming CardWeatherDetail props: ',props)
+console.log('incoming CardWeatherDetail props: ',props)
 
 function handleSaveWeather(event){
   event.preventDefault()
-  API.saveWeather(props).then(res => alert(res, 'has been saved'))
+  API.saveWeather(props.selectedMarker).then(res => console.log(res, 'has been saved'))
+  .then(res => console.log('save: res' , res))
   .catch(err => console.log('Error: ',err))
 }
 

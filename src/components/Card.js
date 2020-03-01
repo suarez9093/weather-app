@@ -22,6 +22,7 @@ function Card({ selectedMarker }) {
                 latitude={selectedMarker.coord.lat}
                 longitude={selectedMarker.coord.lon}
                 country={selectedMarker.sys.country}
+                selectedMarker={selectedMarker}
             />
                
         </div>

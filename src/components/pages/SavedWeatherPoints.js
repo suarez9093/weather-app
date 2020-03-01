@@ -16,7 +16,7 @@ function loadWeather(){
 console.log('savedWeather: ',savedWeather)
     return(
         <div>
-            
+            {savedWeather}
         </div>
     )
 }
