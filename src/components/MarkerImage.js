@@ -1,8 +1,8 @@
 import React from 'react';
 import { Marker } from "react-map-gl"
-import image from "./img/marker.jpg"
+import image from "./img/marker.png"
 
-function MarkerImage({locations, markerCount, onMarkerSelect}){
+function MarkerImage({markerCount, onMarkerSelect}){
 
     return(
         <div>
