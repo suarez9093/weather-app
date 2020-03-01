@@ -19,7 +19,7 @@ export default {
     },
     // Saves a book to the database
     saveWeather: function (weatherData) {
-        console.log(weatherData);
+        console.log('API SaveWeather: ',weatherData);
         return axios.post("/api/weather", weatherData);
     },
     // Gets all saved weather

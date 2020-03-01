@@ -1,12 +1,14 @@
-.border {
-  border: 2px solid black;
+body {
+  margin: 0
 }
+
+
 
 .search-container {
   margin: 0 auto;
 }
 .searchbar {
-  width: 10em;
+  width: 5em;
   margin: 1em
 }
 
@@ -22,4 +24,14 @@
 }
 .pointer {
   width: 3em
+}
+
+
+/* Navigation */
+.navigation-list-items {
+  list-style-type: none;
+  display: flex;
+}
+.navigation-list-item {
+  margin-left: 1em;
 }
