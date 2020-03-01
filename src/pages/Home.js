@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import ReactMapGL from "react-map-gl"
-import API from "../../utils/API"
-import SearchBar from "../Searchbar"
-import MarkerWeatherDetail from "../Card"
-import MapMarkerImage from "..//MapMarkerImage"
+import API from "../utils/API"
+import SearchBar from "../components/Searchbar"
+import MarkerWeatherDetail from "../components/Card"
+import MapMarkerImage from "../components/MapMarkerImage"
 
 
 function Home() {

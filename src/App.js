@@ -1,8 +1,8 @@
 import React, {Fragment} from 'react';
 import { Switch, Route } from 'react-router-dom';
 import NavbarComponent from './components/NavbarComponent'
-import Home from './components/pages/Home';
-import SavedWeatherPoints from './components/pages/SavedWeatherPoints';
+import Home from './pages/Home';
+import SavedWeatherPoints from './pages/SavedWeatherPoints';
 // import { Navbar } from 'reactstrap';
 
  

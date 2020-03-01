@@ -9,9 +9,16 @@ console.log('incoming CardWeatherDetail props: ',props)
 
 function handleSaveWeather(event){
   event.preventDefault()
-  API.saveWeather(props.selectedMarker).then(res => console.log(res, 'has been saved'))
-  .then(res => console.log('save: res' , res))
-  .catch(err => console.log('Error: ',err))
+  API.saveWeather({
+    id: props.id,
+    country: props.country,
+    city: props.name,
+    latitude: props.latitude,
+    longitude: props.longitude,
+    temp: props.temp,
+    feelsLike: props.feelsLike,
+    dateAdded: Date.now()
+  })
 }
 
   return (
