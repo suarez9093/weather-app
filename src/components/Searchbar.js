@@ -6,10 +6,12 @@ function SearchBar({handleFormSubmit,
 
     return (
         <Fragment>
-            <Form>
-                <FormGroup>
-                    <Label htmlFor="markerCount" hidden>Search:</Label>
-                    <Input
+            {/* <Form>
+                <FormGroup> */}
+                    {/* <Label htmlFor="markerCount" hidden>Search:</Label> */}
+                    <div className="search-container">
+                    <input
+                        className="searchbar"
                         type="text" name="markerCount"
                         value={searchField}
                         id="markerCount"
@@ -17,8 +19,10 @@ function SearchBar({handleFormSubmit,
                         onChange={handleInputChange}
                          />
                     <Button id="formBtn" onClick={handleFormSubmit} color="primary">Search</Button>
-                </FormGroup>
-            </Form>
+
+                    </div>
+                {/* </FormGroup>
+            </Form> */}
         </Fragment>
     )
 

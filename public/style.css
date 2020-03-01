@@ -1,18 +1,13 @@
 .border {
   border: 2px solid black;
 }
-/* Header */
-header {
-  background-color: yellow;
-  padding: 1em;
-  margin-bottom: 1em;
-}
-.header-item-width {
-  width: 5em;
-}
 
-input {
-  border: 1px solid black;
+.search-container {
+  margin: 0 auto;
+}
+.searchbar {
+  width: 10em;
+  margin: 1em
 }
 
 .container {
