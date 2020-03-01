@@ -29,27 +29,26 @@ function SavedWeatherPoints() {
 
 
 
-    console.log('savedWeather: ', typeof savedWeather)
+    // console.log('savedWeather: ', typeof savedWeather)
     return (
         <div>
             {!savedWeather ? <h1>No saved Results</h1> :
                 savedWeather.map(weather => (
-                  
-                    <Card>
-                        <p>{weather.country}</p>
-                        <CardBody key={weather.key}
-                            id={weather.id}>
-                            <CardTitle>Weather Detail</CardTitle>
-                            <CardSubtitle>Country: {weather.country}</CardSubtitle>
+
+                    <Card key={weather._id}>
+                        <CardBody>
+
+                            <CardSubtitle><strong>Country:</strong> {weather.country}</CardSubtitle>
                             <CardSubtitle>City: {weather.city}</CardSubtitle>
                             <CardText>Temp: {weather.temp}</CardText>
                             <CardText>Feels Like: {weather.feelsLike}</CardText>
                             <CardText>Latitude: {weather.latitude}</CardText>
                             <CardText>Longitude: {weather.longitude}</CardText>
-                         <Button onClick={() => API.deleteWeather(weather.id).then(loadWeather())}>Delete this weather point</Button>
+                            <Button color="danger" onClick={() => handleDeleteWeather(weather._id)}>Delete this weather point</Button>
                         </CardBody>
                     </Card>
                 ))}
+                {console.log(savedWeather)}
         </div>
     )
 }

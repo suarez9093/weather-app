@@ -5,10 +5,10 @@ body {
 
 
 .search-container {
-  margin: 0 auto;
+  text-align: center;
 }
 .searchbar {
-  width: 5em;
+  width: 20em;
   margin: 1em
 }
 
@@ -16,6 +16,7 @@ body {
   height: 50%;
   width: 50%;
   display: flex;
+
 }
 .mapContainer {
   /* position: static; */
