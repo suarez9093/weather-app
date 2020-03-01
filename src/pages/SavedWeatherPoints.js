@@ -34,8 +34,7 @@ function SavedWeatherPoints() {
     // console.log('savedWeather: ', typeof savedWeather)
     return (
         <div>
-            <NavbarComponent
-            />
+            <NavbarComponent/>
             {!savedWeather ? <h1>No saved Results</h1> :
                 savedWeather.map(weather => (
 
