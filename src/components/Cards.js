@@ -1,12 +1,6 @@
 
 import React from 'react';
-import {
-  Card,
-  // CardImg, 
-
-  CardText, CardBody,
-  CardTitle, CardSubtitle,
-  // Button
+import {Card,CardText, CardBody,CardTitle, CardSubtitle,Button
 } from 'reactstrap';
 
 function Cards(props) {
@@ -22,7 +16,7 @@ function Cards(props) {
           <CardText>Feels Like: {props.feelsLike}</CardText>
           <CardText>Latitude: {props.latitude}</CardText>
           <CardText>Longitude: {props.longitude}</CardText>
-          {/* <Button>Button</Button> */}
+          <Button>Save this Weather Point</Button>
         </CardBody>
       </Card>
     </div>

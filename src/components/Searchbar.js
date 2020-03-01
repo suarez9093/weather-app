@@ -1,16 +1,13 @@
 import React, { Fragment} from "react";
-import { Form, FormGroup, Input, Label, Button } from "reactstrap";
+import { Button, Input } from "reactstrap";
 
-function SearchBar({handleFormSubmit, 
-    handleInputChange, searchField}) {
+function SearchBar({handleFormSubmit, handleInputChange, searchField}) {
 
     return (
         <Fragment>
-            {/* <Form>
-                <FormGroup> */}
-                    {/* <Label htmlFor="markerCount" hidden>Search:</Label> */}
+        
                     <div className="search-container">
-                    <input
+                    <Input
                         className="searchbar"
                         type="text" name="markerCount"
                         value={searchField}
@@ -21,8 +18,7 @@ function SearchBar({handleFormSubmit,
                     <Button id="formBtn" onClick={handleFormSubmit} color="primary">Search</Button>
 
                     </div>
-                {/* </FormGroup>
-            </Form> */}
+         
         </Fragment>
     )
 
