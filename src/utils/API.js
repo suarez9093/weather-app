@@ -12,7 +12,7 @@ export default {
      
         return axios.get(URL);
     },
-    // Saves a book to the saved weather point page
+    // Saves weather to the saved weather point page
     saveWeather: function (weatherData) {
         console.log('API SaveWeather: ',weatherData);
         return axios.post("/api/weather", weatherData);

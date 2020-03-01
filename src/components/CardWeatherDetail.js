@@ -19,6 +19,7 @@ function handleSaveWeather(event){
     feelsLike: props.feelsLike,
     dateAdded: Date.now()
   })
+  alert(`Saved ${props.name}!`)
 }
 
   return (
