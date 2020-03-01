@@ -1,60 +1,14 @@
-// import React, { useState } from 'react';
-// import {Link} from "react-router-dom"
-// import {
-//   Collapse,
-//   Navbar,
-//   NavbarToggler,
-//   Nav,
-//   NavItem,
-//   NavLink,
-//   UncontrolledDropdown,
-//   DropdownToggle,
-//   DropdownMenu,
-//   DropdownItem,
-//   NavbarText
-// } from 'reactstrap';
+import React from 'react';
+import {Link} from 'react-router-dom';
 
-// const NavbarComponent = (props) => {
-//   const [isOpen, setIsOpen] = useState(false);
-
-//   const toggle = () => setIsOpen(!isOpen);
-
-//   return (
-//     <div>
-//       <Navbar color="light" light expand="md">
-      
-//         <NavbarToggler onClick={toggle} />
-//         <Collapse isOpen={isOpen} navbar>
-//           <Nav className="mr-auto" navbar>
-//             <NavItem>
-//               {/* <NavLink><Link>Home</Link></NavLink> */}
-//             </NavItem>
-//             <NavItem>
-//               <NavLink href="https://github.com/reactstrap/reactstrap">GitHub</NavLink>
-//             </NavItem>
-//             <UncontrolledDropdown nav inNavbar>
-//               <DropdownToggle nav caret>
-//                 Options
-//               </DropdownToggle>
-//               <DropdownMenu right>
-//                 <DropdownItem>
-//                   Option 1
-//                 </DropdownItem>
-//                 <DropdownItem>
-//                   Option 2
-//                 </DropdownItem>
-//                 <DropdownItem divider />
-//                 <DropdownItem>
-//                   Reset
-//                 </DropdownItem>
-//               </DropdownMenu>
-//             </UncontrolledDropdown>
-//           </Nav>
-//           <NavbarText>Simple Text</NavbarText>
-//         </Collapse>
-//       </Navbar>
-//     </div>
-//   );
-// }
-
-// export default NavbarComponent;
+function NavbarComponent(){
+    return(
+        <nav className='navigation-bar'>
+            <ul className='navigation-list-items'>
+            <li className='navigation-list-item'><Link className='navigation-link' to='/'>Home</Link></li>
+            <li className='navigation-list-item'><Link className='navigation-link' to='/saved'>Saved Weather Points</Link></li>
+            </ul>
+        </nav>
+    )
+}
+export default NavbarComponent;

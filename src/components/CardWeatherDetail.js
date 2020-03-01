@@ -1,13 +1,22 @@
 
 import React from 'react';
+import API from '../utils/API'
 import {Card,CardText, CardBody,CardTitle, CardSubtitle,Button
 } from 'reactstrap';
 
-function Cards(props) {
+function CardWeatherDetail(props) {
+console.log('incoming CardWeatherDetail props: ',props)
+
+function handleSaveWeather(event){
+  event.preventDefault()
+  API.saveWeather(props.selectedMarker).then(res => console.log(res, 'has been saved'))
+  .then(res => console.log('save: res' , res))
+  .catch(err => console.log('Error: ',err))
+}
+
   return (
     <div>
       <Card>
-        {/* <CardImg top width="100%" src="/assets/318x180.svg" alt="Card image cap" /> */}
         <CardBody>
           <CardTitle>Weather Detail</CardTitle>
           <CardSubtitle>Country: {props.country}</CardSubtitle>
@@ -16,11 +25,11 @@ function Cards(props) {
           <CardText>Feels Like: {props.feelsLike}</CardText>
           <CardText>Latitude: {props.latitude}</CardText>
           <CardText>Longitude: {props.longitude}</CardText>
-          <Button>Save this Weather Point</Button>
+          <Button onClick={handleSaveWeather}>Save this Weather Point</Button>
         </CardBody>
       </Card>
     </div>
   );
 };
 
-export default Cards;
+export default CardWeatherDetail;
