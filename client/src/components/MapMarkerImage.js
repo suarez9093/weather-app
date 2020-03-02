@@ -1,6 +1,8 @@
 import React from 'react';
 import { Marker } from "react-map-gl"
 import image from "./img/marker.png"
+import { faCloud } from "@fortawesome/free-solid-svg-icons"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 function MapMarkerImage({ markerCount, onMarkerSelect }) {
 
@@ -15,7 +17,7 @@ function MapMarkerImage({ markerCount, onMarkerSelect }) {
                         offsetLeft={-20}
                         offsetTop={-10}>
                         <button onClick={() => onMarkerSelect(marker)}>
-                            <img className="pointer" src={image} alt="pointer" />
+                            <FontAwesomeIcon className="font-awesome-icon" icon={faCloud} />
                         </button>
                     </Marker>
                 ))

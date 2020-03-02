@@ -62,12 +62,7 @@ function Home() {
           markerCount={markerCount}
         />
       </ReactMapGL>
-      {/* <SearchBar
-        handleFormSubmit={handleFormSubmit}
-        handleInputChange={handleInputChange}
-        searchField={searchField}
-      /> */}
-    
+   
       <MarkerWeatherDetail selectedMarker={selectedMarker} />
     </div>
   )

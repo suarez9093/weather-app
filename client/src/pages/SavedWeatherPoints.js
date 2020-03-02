@@ -1,14 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import API from '../utils/API'
 import {
-    Card, CardText, CardBody, CardTitle, CardSubtitle, Button
+    Card, CardText, CardBody, Button
 } from 'reactstrap';
 import NavbarComponent from '../components/NavbarComponent'
 
-
 function SavedWeatherPoints() {
     const [savedWeather, setSavedWeather] = useState()
-
+    console.log(savedWeather)
     useEffect(() => {
         loadWeather()
     }, [])
@@ -16,7 +15,6 @@ function SavedWeatherPoints() {
     function loadWeather() {
         API.getAllWeather()
             .then(res => {
-                //  console.log('saved to state: ',res.data)
                 setSavedWeather(res.data)
             })
     }
@@ -29,33 +27,26 @@ function SavedWeatherPoints() {
 
     };
 
-
-
-    // console.log('savedWeather: ', typeof savedWeather)
     return (
         <div>
-            <NavbarComponent/>
+            <NavbarComponent />
             {!savedWeather ? <h1>No saved Results</h1> :
                 savedWeather.map(weather => (
 
                     <Card key={weather._id}>
                         <CardBody>
-
-                            <CardSubtitle><strong>Country:</strong> {weather.country}</CardSubtitle>
-                            <CardSubtitle>City: {weather.city}</CardSubtitle>
-                            <CardText>Temp: {weather.temp}</CardText>
-                            <CardText>Feels Like: {weather.feelsLike}</CardText>
-                            <CardText>Latitude: {weather.latitude}</CardText>
-                            <CardText>Longitude: {weather.longitude}</CardText>
-                            {/* <Link to={`/saved/${weather._id}`}>View city weather </Link> */}
+                            <CardText><strong>Country:</strong> {weather.country}</CardText>
+                            <CardText><strong>City:</strong> {weather.city}</CardText>
+                            <CardText><strong>Temp:</strong> {(((weather.temp - 273.15) * 1.8) + 32).toFixed(2)}°</CardText>
+                            <CardText><strong>Feels Like:</strong> {(((weather.feelsLike - 273.15) * 1.8) + 32).toFixed(2)}°</CardText>
                             <br />
                             <br />
 
-                            <Button color="danger" onClick={() => handleDeleteWeather(weather._id)}>Delete this weather point</Button>
+                            <Button className="btn-width" color="danger" onClick={() => handleDeleteWeather(weather._id)}>Delete this weather point</Button>
                         </CardBody>
                     </Card>
+
                 ))}
-            {console.log(savedWeather)}
         </div>
     )
 }

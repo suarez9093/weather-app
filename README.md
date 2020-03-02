@@ -9,7 +9,7 @@
   
   </a>
   <p align="center">
-    An REST api application that returns a number of lat and long points with weather data.
+    A REST api application that returns a number of lat and long points with weather data.
     <br />
     <br />
     <a href="https://dry-cliffs-65340.herokuapp.com/"> Live Demo Coming Soon</a>
@@ -31,10 +31,18 @@ An app that allows you to search random weather points.
 * [Open Weather Map](https://openweathermap.org/api)
 
 
-## Running the Project
+## Getting Started
 * Clone the repo
-* run npm i in terminal
-* run npm run start
+* Run "npm install" 
+* Run "mongod"
+* Run "node server.js"
+* Run "npm run start"
+
+For this app to run properly, you will need to create a .env file at the root of the project containing two key/val pairs:
+
+REACT_APP_MAPBOX_API_KEY (a Mabox API key)
+REACT_APP_WEATHER_KEY (a Open Weather API key).
+
 
 <!-- CONTACT -->
 ## Contact

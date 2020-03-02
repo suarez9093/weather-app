@@ -6,11 +6,6 @@ function Card({ selectedMarker }) {
     if (!selectedMarker) {
         return <h3>No location selected</h3>
     }
-
-
-    console.log('Selected Marker: ', selectedMarker)
-
-
     return (
         <div>
             <CardWeatherDetails

@@ -5,7 +5,6 @@ import {Card,CardText, CardBody,CardTitle, CardSubtitle,Button
 } from 'reactstrap';
 
 function CardWeatherDetail(props) {
-console.log('incoming CardWeatherDetail props: ',props)
 
 function handleSaveWeather(event){
   event.preventDefault()
@@ -26,16 +25,16 @@ function handleSaveWeather(event){
     <div>
       <Card>
         <CardBody>
-          <CardTitle>Weather Detail</CardTitle>
-          <CardSubtitle>Country: {props.country}</CardSubtitle>
-          <CardSubtitle>City: {props.name}</CardSubtitle>
-          <CardText>Temp: {props.temp}</CardText>
-          <CardText>Feels Like: {props.feelsLike}</CardText>
-          <CardText>Latitude: {props.latitude}</CardText>
-          <CardText>Longitude: {props.longitude}</CardText>
+          <CardTitle><strong>Weather Detail</strong></CardTitle>
+          <CardSubtitle><strong>Country:</strong> {props.country}</CardSubtitle>
+          <CardSubtitle><strong>City:</strong> {props.name}</CardSubtitle>
+          <CardText><strong>Temp:</strong> {(((props.temp-273.15)*1.8)+32).toFixed(2)}</CardText>
+          <CardText><strong>Feels Like:</strong> {(((props.feelsLike-273.15)*1.8)+32).toFixed(2)}</CardText>
+          <CardText><strong>Latitude:</strong> {props.latitude}</CardText>
+          <CardText><strong>Longitude:</strong> {props.longitude}</CardText>
+          <Button  className="btn btn-primary btn-width"onClick={handleSaveWeather}>Save this Weather Point</Button>
         </CardBody>
       </Card>
-          <button className="btn btn-primary" onClick={handleSaveWeather}>Save this Weather Point</button>
     </div>
   );
 };
