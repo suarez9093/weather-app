@@ -3,6 +3,7 @@ const app = express();
 const PORT = process.env.PORT || 3001;
 const mongoose = require('mongoose')
 const routes = require('./routes')
+const path = require('path')
 require('./client/node_modules/dotenv').config()
 
 
@@ -11,7 +12,7 @@ app.use(express.json());
 
 
 if (process.env.NODE_ENV === "production") {
-  app.use(express.static("client/build"));
+  app.use(express.static(path.join(__dirname, "client/build")));
 
 }  
 
