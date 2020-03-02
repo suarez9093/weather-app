@@ -3,6 +3,7 @@ const app = express();
 const PORT = process.env.PORT || 3001;
 const mongoose = require('mongoose')
 const routes = require('./routes')
+require('dotenv').config()
 
 
 app.use(express.urlencoded({ extended: true }));
@@ -21,3 +22,5 @@ mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/weatherApp",  {
 app.listen(PORT, () =>
   console.log('Express server is running on localhost:3001')
 );
+
+module.exports = app;
