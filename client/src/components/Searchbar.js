@@ -15,7 +15,7 @@ function SearchBar({ handleFormSubmit, handleInputChange, searchField }) {
                         onChange={handleInputChange} />
                     <br />
                     <br />
-                    <button className='btn btn-primary' onClick={handleFormSubmit}>Search</button>
+                    <button className='btn btn-width btn-primary' onClick={handleFormSubmit}>Search</button>
                 </form>
 
             </div>

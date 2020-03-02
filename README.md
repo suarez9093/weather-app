@@ -1,21 +1,42 @@
 
-API:
+ <h3 align="center">Weather Point</h3>
+ 
+![Project Name](gif/weatherpoint.gif)
 
-1. Create a REST api that returns a number of random lat and long points with weather data.
-    * Be able to specify the # of returned points
-    * Use Open Weather Map, Random.org api, Mapbox for rendering maps
-    * There are only certian valid nmbers for lat/long
+<!-- PROJECT LOGO -->
+<br />
+<p align="center">
+  
+  </a>
+  <p align="center">
+    An REST api application that returns a number of lat and long points with weather data.
+    <br />
+    <br />
+    <a href="https://dry-cliffs-65340.herokuapp.com/"> Live Demo Coming Soon</a>
+  </p>
+</p>
+
+<!-- ABOUT THE PROJECT -->
+## About The Project
+
+An app that allows you to search random weather points.
+
+### Built With
+* [React](https://reactjs.org/)
+* [React Bootstrap](https://react-bootstrap.github.io/)
+* [React-Map-GL](https://uber.github.io/react-map-gl/)
+* [NodeJS](https://nodejs.org/en/)
+* [MongoDB](https://www.mongodb.com/)
+* [Express](https://expressjs.com/)
+* [Open Weather Map](https://openweathermap.org/api)
 
 
-2. Have separate endpoints for getting the data and rendering the data
+## Running the Project
+* Clone the repo
+* run npm i in terminal
+* run npm run start
 
+<!-- CONTACT -->
+## Contact
 
-3. Please include instructions on how to run your application as a part of submitting
-Webapp:
-
-Submitting:
-
-Email careers@ageagle.com with a link to a public git repositry
-
-
-1. Get 10 lat and lot from api
+Alex Suarez - [LinkedIn](https://www.linkedin.com/in/alexsuarez9093/) - suarez9093@hotmail.com

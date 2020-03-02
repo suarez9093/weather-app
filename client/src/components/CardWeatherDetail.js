@@ -34,8 +34,8 @@ function handleSaveWeather(event){
           <CardText>Latitude: {props.latitude}</CardText>
           <CardText>Longitude: {props.longitude}</CardText>
         </CardBody>
-          <Button onClick={handleSaveWeather}>Save this Weather Point</Button>
       </Card>
+          <button className="btn btn-primary" onClick={handleSaveWeather}>Save this Weather Point</button>
     </div>
   );
 };
