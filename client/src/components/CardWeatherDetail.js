@@ -7,6 +7,7 @@ import {Card,CardText, CardBody,CardTitle, CardSubtitle,Button
 function CardWeatherDetail(props) {
 
 function handleSaveWeather(event){
+  console.log('props: ',props)
   event.preventDefault()
   API.saveWeather({
     id: props.id,
