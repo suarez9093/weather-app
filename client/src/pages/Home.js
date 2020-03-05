@@ -10,15 +10,15 @@ const RANDOM_REF_KEY = process.env.REACT_APP_RANDOM_API_REF
 
 function Home() {
 
-  useEffect(()=> {
+  useEffect(() => {
     // fetch(`https://randomapi.com/api/n4pftsxb?key=6JPH-QWD5-3TNH-0GN3&results=2`).then(res => res.json()).then(data => setCoordinates(data.results))
-  },[])
+  }, [])
 
 
-  const [markerCount, setMarkerCount] = useState()
+  const [markerCount, setMarkerCount] = useState([])
   const [selectedMarker, setSelectedMarker] = useState()
   const [searchField, setSearchField] = useState()
-  const [coordinates , setCoordinates] = useState()
+  const [coordinates, setCoordinates] = useState()
   const [viewport, setViewPort] = useState({
     latitude: 35.5501, // needs to be dynamic
     longitude: -80.7821, // dynamic
@@ -26,47 +26,52 @@ function Home() {
     width: '100vw',
     height: '60vh'
   })
-// console.log(coordinates)
+  // console.log(coordinates)
   function handleInputChange(e) {
     const { value } = e.target
     setSearchField(value)
   }
 
-  function weatherSearch() {
-    fetch(`https://randomapi.com/api/n4pftsxb?key=6JPH-QWD5-3TNH-0GN3&results=${searchField}`)
-    .then(res => res.json())
-    .then(data => console.log(data))
-    // .then(coordinates.map(coord => {
-    //   API.searchWeather(coord.lat, coord.lon)
-    // }))
-    console.log(coordinates)
-    
-   
-  
-    setSearchField('')
-   
+  async function weatherSearch() {
+    const count = await fetch(`https://randomapi.com/api/n4pftsxb?key=6JPH-QWD5-3TNH-0GN3&results=${searchField}`)
+    const toJson = await count.json()
+    await console.log('toJson', toJson)
+    const latAndLon = await toJson.results
+    await console.log('latAndLon',latAndLon)
+    const result = await setMarkerCount(latAndLon)
+    return result
+    // await latAndLon.map(async coord => {
+    //   const result = await API.searchWeather(coord.lat, coord.lon)
+    //   setMarkerCount(result)
+    // })
+
   }
+
+  console.log(markerCount)
+
+
+
+
 
   function handleFormSubmit(e) {
     e.preventDefault()
     const { value } = e.target
-    console.log('value', value)
     setSearchField(value)
-    console.log(searchField)
     weatherSearch()
   }
 
-  function onMarkerSelect(marker) {
-    setSelectedMarker(marker)
+  async function onMarkerSelect(marker) {
+    const result = await setSelectedMarker(marker)
+    return await result
   }
 
   return (
     <div>
- <NavbarComponent 
- handleInputChange={handleInputChange}
- handleFormSubmit={handleFormSubmit}
- searchField={searchField}
- />
+      <NavbarComponent
+        handleInputChange={handleInputChange}
+        handleFormSubmit={handleFormSubmit}
+        searchField={searchField}
+      />
       <ReactMapGL
         {...viewport}
         mapStyle={"mapbox://styles/suarez9093/ck773vm2e08i91iqi1m48zfss"}
@@ -78,7 +83,7 @@ function Home() {
           markerCount={markerCount}
         />
       </ReactMapGL>
-   
+
       <MarkerWeatherDetail selectedMarker={selectedMarker} />
     </div>
   )
