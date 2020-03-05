@@ -12,8 +12,8 @@ function MapMarkerImage({ markerCount, onMarkerSelect }) {
                 markerCount.map(marker => (
                     <Marker
                         key={marker.id}
-                        latitude={marker.coord.lat}
-                        longitude={marker.coord.lon}
+                        latitude={marker.lat}
+                        longitude={marker.lon}
                         offsetLeft={-20}
                         offsetTop={-10}>
                         <button onClick={() => onMarkerSelect(marker)}>

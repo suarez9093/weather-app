@@ -7,6 +7,7 @@ import {Card,CardText, CardBody,CardTitle, CardSubtitle,Button
 function CardWeatherDetail(props) {
 
 function handleSaveWeather(event){
+  console.log('props: ',props)
   event.preventDefault()
   API.saveWeather({
     id: props.id,
@@ -28,8 +29,8 @@ function handleSaveWeather(event){
           <CardTitle><strong>Weather Detail</strong></CardTitle>
           <CardSubtitle><strong>Country:</strong> {props.country}</CardSubtitle>
           <CardSubtitle><strong>City:</strong> {props.name}</CardSubtitle>
-          <CardText><strong>Temp:</strong> {(((props.temp-273.15)*1.8)+32).toFixed(2)}</CardText>
-          <CardText><strong>Feels Like:</strong> {(((props.feelsLike-273.15)*1.8)+32).toFixed(2)}</CardText>
+          <CardText><strong>Temp:</strong> {(((props.temp-273.15)*1.8)+32).toFixed(2)}°</CardText>
+          <CardText><strong>Feels Like:</strong> {(((props.feelsLike-273.15)*1.8)+32).toFixed(2)}°</CardText>
           <CardText><strong>Latitude:</strong> {props.latitude}</CardText>
           <CardText><strong>Longitude:</strong> {props.longitude}</CardText>
           <Button  className="btn btn-primary btn-width"onClick={handleSaveWeather}>Save this Weather Point</Button>
