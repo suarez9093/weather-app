@@ -7,7 +7,6 @@ import NavbarComponent from '../components/NavbarComponent'
 
 function SavedWeatherPoints() {
     const [savedWeather, setSavedWeather] = useState()
-    console.log(savedWeather)
     useEffect(() => {
         loadWeather()
     }, [])
@@ -32,7 +31,6 @@ function SavedWeatherPoints() {
             <NavbarComponent />
             {!savedWeather ? <h1>No saved Results</h1> :
                 savedWeather.map(weather => (
-
                     <Card key={weather._id}>
                         <CardBody>
                             <CardText><strong>Country:</strong> {weather.country}</CardText>
@@ -41,14 +39,11 @@ function SavedWeatherPoints() {
                             <CardText><strong>Feels Like:</strong> {(((weather.feelsLike - 273.15) * 1.8) + 32).toFixed(2)}°</CardText>
                             <br />
                             <br />
-
                             <Button className="btn-width" color="danger" onClick={() => handleDeleteWeather(weather._id)}>Delete this weather point</Button>
                         </CardBody>
                     </Card>
-
                 ))}
         </div>
     )
 }
-
 export default SavedWeatherPoints

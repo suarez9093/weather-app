@@ -44,7 +44,6 @@ function Home() {
   }
 
   async function onMarkerSelect(marker) {
-    console.log(marker)
     API.searchWeather(marker.lat, marker.lon)
     .then(res => {
       setSelectedMarker(res.data)

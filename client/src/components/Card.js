@@ -2,7 +2,6 @@ import React from 'react';
 import CardWeatherDetails from "./CardWeatherDetail";
 
 function Card({ selectedMarker }) {
-    console.log('selectedmarker', selectedMarker)
     return (
         <div>
             {selectedMarker.main ?

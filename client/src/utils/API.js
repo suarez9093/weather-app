@@ -21,7 +21,6 @@ export default {
     },
     // Saves weather to the saved weather point page
     saveWeather: function (weatherData) {
-        console.log('API SaveWeather: ',weatherData);
         return axios.post("/api/weather", weatherData);
     },
     // Gets all saved weather
