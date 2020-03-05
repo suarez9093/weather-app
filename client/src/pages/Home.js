@@ -10,15 +10,10 @@ const RANDOM_REF_KEY = process.env.REACT_APP_RANDOM_API_REF
 
 function Home() {
 
-  useEffect(() => {
-    // fetch(`https://randomapi.com/api/n4pftsxb?key=6JPH-QWD5-3TNH-0GN3&results=2`).then(res => res.json()).then(data => setCoordinates(data.results))
-  }, [])
-
-
   const [markerCount, setMarkerCount] = useState([])
   const [selectedMarker, setSelectedMarker] = useState({})
   const [searchField, setSearchField] = useState()
-  const [coordinates, setCoordinates] = useState()
+  // const [coordinates, setCoordinates] = useState()
   const [viewport, setViewPort] = useState({
     latitude: 35.5501, // needs to be dynamic
     longitude: -80.7821, // dynamic
@@ -33,39 +28,14 @@ function Home() {
   }
 
   async function weatherSearch() {
-    const count = await fetch(`https://randomapi.com/api/n4pftsxb?key=6JPH-QWD5-3TNH-0GN3&results=${searchField}`)
+    const count = await fetch(`https://randomapi.com/api/${RANDOM_REF_KEY}?key=${RANDOM_NUMBER_KEY}&results=${searchField}`)
     const toJson = await count.json()
-    console.log('toJson', toJson)
     const latAndLon = await toJson.results
-     console.log('latAndLon',latAndLon)
-    
-  //   setCoordinates(latAndLon)
-
-  //  API.searchWeather(latAndLon.lat,latAndLon.lon).then(res => res.json())
-  //  .then(data => setMarkerCount(data))
-  //  .catch(err => console.log(err))
-  //  return results
-    
-    // API.searchWeather(latAndLon.lat, latAndLon.lon)
-    // .then(res => res.json())
-    // .then(data => console.log(data))
     
      setMarkerCount(latAndLon)
-  
-    // .then(res => res.json())
-    // .then(data => console.log(data)) 
-    
-    //  latAndLon.map( coord => {
-    //   const result =  API.searchWeather(coord.lat, coord.lon)
-    //   setMarkerCount(result)
-    // })
 
   }
  
-console.log('markerCount: ',markerCount)
-
-
-
   function handleFormSubmit(e) {
     e.preventDefault()
     const { value } = e.target
@@ -80,11 +50,6 @@ console.log('markerCount: ',markerCount)
       setSelectedMarker(res.data)
 
     })
-    // .then(data => console.log(data))
-    // return result
-    
-    // const result = await setSelectedMarker(marker)
-    // return await result
   }
 
   return (

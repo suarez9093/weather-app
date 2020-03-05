@@ -3,9 +3,6 @@ import CardWeatherDetails from "./CardWeatherDetail";
 
 function Card({ selectedMarker }) {
     console.log('selectedmarker', selectedMarker)
-    // if (!selectedMarker) {
-    //     return <h3>No location selected</h3>
-    // }
     return (
         <div>
             {selectedMarker.main ?
