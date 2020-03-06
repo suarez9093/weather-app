@@ -31,3 +31,5 @@ app.listen(PORT, () =>
   console.log('Express server is running on localhost:3001')
 );
 
+
+// Using the MVC model. Arcitecture helps create applications that separate the different aspects of the application (input logic, business logic, and UI logic)
