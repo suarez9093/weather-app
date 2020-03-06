@@ -6,10 +6,10 @@ const RANDOM_REF_KEY = process.env.REACT_APP_RANDOM_API_REF
 
 export default {
     
-    randomCoordinates: (count) => {
-        const URL = `https://randomapi.com/api/${RANDOM_REF_KEY}?key=${RANDOM_NUMBER_KEY}&results=${count}`
-        return axios.get(URL)
-    },
+    // randomCoordinates: (count) => {
+    //     const URL = `https://randomapi.com/api/${RANDOM_REF_KEY}?key=${RANDOM_NUMBER_KEY}&results=${count}`
+    //     return axios.get(URL)
+    // },
     // Search for weather
     searchWeather: (lat, lon) => {
         // const coordinates = `lat=${lat}&lon=${lon}&count=${count}`

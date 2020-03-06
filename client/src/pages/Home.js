@@ -22,7 +22,7 @@ function Home() {
     height: '60vh'
   })
   // console.log(coordinates)
-  function handleInputChange(e) {
+   function handleInputChange(e) {
     const { value } = e.target
     setSearchField(value)
   }

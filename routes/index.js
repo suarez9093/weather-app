@@ -1,8 +1,11 @@
+// Dependencies
+// =============================================
 const path = require("path");
 const router = require("express").Router();
 const apiRoutes = require("./api");
 
 // API Routes
+// Declaring the route to use for endpoints
 router.use("/api", apiRoutes);
 
 // If no API routes are hit, send the React app
