@@ -39,8 +39,8 @@ function SavedWeatherPoints() {
                             {/* Converts to farenheight */}
                             <CardText><strong>Temp:</strong> {(((weather.temp - 273.15) * 1.8) + 32).toFixed(2)}°</CardText>
                             <CardText><strong>Feels Like:</strong> {(((weather.feelsLike - 273.15) * 1.8) + 32).toFixed(2)}°</CardText>
-                <CardText><strong>Latitude:</strong> {weather.latitude} </CardText>
-                <CardText><strong>Longitude:</strong> {weather.longitude} </CardText>
+                            <CardText><strong>Latitude:</strong> {weather.latitude} </CardText>
+                            <CardText><strong>Longitude:</strong> {weather.longitude} </CardText>
                             <br />
                             <br />
                             <Button className="btn-width" color="danger" onClick={() => handleDeleteWeather(weather._id)}>Delete this weather point</Button>

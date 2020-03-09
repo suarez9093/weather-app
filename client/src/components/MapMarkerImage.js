@@ -4,13 +4,10 @@ import { faCloud } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 function MapMarkerImage({ markerCount, onMarkerSelect }) {
-
     return (
         <div>
-            {console.log('markerCount: ',markerCount)}
             {!markerCount ? null :
                 markerCount.map(marker => (
-                   
                     <Marker
                         key={marker.id}
                         latitude={marker.lat}
@@ -24,8 +21,6 @@ function MapMarkerImage({ markerCount, onMarkerSelect }) {
                 ))
             }
         </div>
-
     )
 }
-
 export default MapMarkerImage

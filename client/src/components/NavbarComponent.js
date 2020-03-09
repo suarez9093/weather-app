@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 
 function NavbarComponent({ searchField, handleFormSubmit, handleInputChange }) {
     return (
-
         <header>
             <div className="container container-flex">
                 <div className="header-title-container">

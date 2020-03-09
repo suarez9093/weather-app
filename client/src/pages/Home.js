@@ -7,7 +7,6 @@ import NavbarComponent from '../components/NavbarComponent'
 const RANDOM_NUMBER_KEY = process.env.REACT_APP_RANDOM_API_KEY
 const RANDOM_REF_KEY = process.env.REACT_APP_RANDOM_API_REF
 
-
 function Home() {
   // Setting the state
   const [markerCount, setMarkerCount] = useState([])
@@ -45,11 +44,13 @@ function Home() {
   async function weatherSearch() {
     console.log('searchField: ',searchField)
   // Takes the value that was put into the searchfiled and returns that many lat and lon points
-    const count = await fetch(`https://randomapi.com/api/${RANDOM_REF_KEY}?key=${RANDOM_NUMBER_KEY}&results=${searchField}`)
+    const count = await fetch(`https://randomapi.com/api/?key=${RANDOM_NUMBER_KEY}&ref=${RANDOM_REF_KEY}&results=${searchField}&page=10`)
     // Converts the response to a json
     const toJson = await count.json()
+    console.log('toJson: ',toJson)
     // grab the results key from the json object
     const latAndLon = await toJson.results
+    console.log('latAndLon: ',latAndLon)
     // then it will set the state of the MarkerCount to generate that many weather markers on the map. MakerCount is passed as props to the MapMarkerImage component and for every lat and lon point it will generate an image
     setMarkerCount(latAndLon)
   }
