@@ -1,13 +1,16 @@
 
 import React from 'react';
-import API from '../utils/API'
+import API from '../utils/API';
 import {Card,CardText, CardBody,CardTitle, CardSubtitle,Button
 } from 'reactstrap';
 
 function CardWeatherDetail(props) {
 
+// When the 'Save this Weather Point' button is clicked
 function handleSaveWeather(event){
+  // Prevent defaulft for to prevent the page from rerendering
   event.preventDefault()
+  // make an axios call to save this weather point to the db
   API.saveWeather({
     id: props.id,
     country: props.country,

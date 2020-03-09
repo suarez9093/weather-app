@@ -1,18 +1,12 @@
 import axios from "axios"
 const endpoint = "http://api.openweathermap.org/data/2.5/weather?";
-const RANDOM_NUMBER_KEY = process.env.REACT_APP_RANDOM_API_KEY
 const API_KEY = process.env.REACT_APP_WEATHER_API_KEY
-const RANDOM_REF_KEY = process.env.REACT_APP_RANDOM_API_REF
 
 export default {
     
-    // randomCoordinates: (count) => {
-    //     const URL = `https://randomapi.com/api/${RANDOM_REF_KEY}?key=${RANDOM_NUMBER_KEY}&results=${count}`
-    //     return axios.get(URL)
-    // },
+
     // Search for weather
     searchWeather: (lat, lon) => {
-        // const coordinates = `lat=${lat}&lon=${lon}&count=${count}`
         const coordinates = `lat=${lat}&lon=${lon}`
        
         const URL = endpoint + coordinates + "&appid=" + API_KEY
@@ -25,6 +19,7 @@ export default {
     },
     // Gets all saved weather
     getAllWeather: function () {
+    
         return axios.get("/api/weather");
     },
     // Gets the weather with the given id

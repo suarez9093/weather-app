@@ -4,7 +4,7 @@ const weatherController = require("../../controllers/weatherConroller");
 
 // Matches with "/api/weather"
 router.route("/")
-  // .get(weatherController.findAll) // query the db on this route run the get method defined in the controller
+  .get(weatherController.findAll) // query the db on this route run the get method defined in the controller
   .post(weatherController.create); // allows a post request to be handeled on this route
 
 // Matches with "/api/weather/:id"

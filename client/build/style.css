@@ -1,0 +1,140 @@
+body {
+  margin: 0;
+  font-family: "Ubuntu", "sans-serif";
+  font-size: 1.125rem;
+  line-height: 1.5;
+}
+.font-awesome-icon {
+  font-size: 2rem
+}
+/* ====================================
+          Typography
+======================================= */
+
+h1 {
+  font-family: "Lora", "sans-serif";
+  font-weight: 400;
+  margin: 0;
+}
+.header-subtitle {
+  color: #1792D2;
+  text-transform: uppercase;
+  letter-spacing: .25em;
+  font-size: .75rem;
+  font-weight: 700;
+  margin: 0;
+}
+/* ====================================
+          Layout
+======================================= */
+.container {
+  width: 90%;
+  max-width: 900px;
+  margin: 0 auto;
+  /* border: 1px solid red */
+}
+.container-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.container-right {
+  display: flex;
+  justify-content:flex-end;
+  align-items: center;
+}
+header {
+  background-color: #f8f8f8;
+  padding: 1em 0;
+  /* margin-bottom: 1em */
+}
+.header-title-container {
+  margin-bottom: 1em;
+}
+/* navigation */
+.navigation-list {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  /* border: 1px solid black; */
+  padding-left: 0;
+  margin: 0; 
+  align-items: center;
+}
+.navigation-list-item {
+  margin: .25em 0;
+  margin-left: 1em;
+}
+.navigation-link {
+  text-decoration: none;
+  color: #707070;
+  font-weight: 700;
+  
+}
+.navigation-link:hover, .navigation-link:focus {
+  color: #1792D2;
+}
+
+@media (max-width:675px) {
+  .container-flex {
+    flex-direction: column;
+  }
+  .navigation-list {
+    flex-direction: column;
+  }
+
+  
+}
+.mapContainer {
+  /* position: static; */
+  display: inline;
+  height: 100% ;
+  margin-top: 0;
+}
+.pointer {
+  width: 3em
+}
+
+
+/* Navigation */
+.navigation-list-items {
+  list-style-type: none;
+  display: flex;
+}
+.navigation-list-item {
+  margin-left: 1em;
+}
+
+/* Inputs */
+input,
+.btn {
+    width: 100%;
+    border-radius: 5px;
+}
+
+input {
+    font-family: inherit;
+    text-align: inherit;
+    margin-bottom: 13em;
+    padding: .25em;
+    border: 1px solid #404040;
+}
+
+
+.btn {
+  display: inline-block;
+  padding: 1em 1.5em;
+  font-size: 0.625rem;
+  text-transform: uppercase;
+  font-weight: 900;
+  letter-spacing: 1px;
+  border: 0;
+  cursor: pointer;
+}
+.btn-width {
+  width: 20em
+}
+.btn-primary {
+  background: linear-gradient(to left, #10a0e2, #2cddfc);
+  color: white;
+}
