@@ -86,8 +86,7 @@ header {
   
 }
 .mapContainer {
-  /* position: static; */
-  display: inline;
+  position: static;
   height: 100% ;
   margin-top: 0;
 }

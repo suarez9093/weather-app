@@ -1,4 +1,4 @@
-// Export Weather model to controllers -------------------------
+// // Export Weather model to controllers -------------------------
 module.exports = {
     Weather: require("./weather")
   };

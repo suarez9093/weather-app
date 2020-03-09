@@ -29,6 +29,7 @@ An app that allows you to search random weather points.
 * [MongoDB](https://www.mongodb.com/)
 * [Express](https://expressjs.com/)
 * [Open Weather Map](https://openweathermap.org/api)
+* [Random API](https://randomapi.com/)
 
 
 ## Getting Started
@@ -38,10 +39,12 @@ An app that allows you to search random weather points.
 * Run "node server.js"
 * Run "npm run start"
 
-For this app to run properly, you will need to create a .env file at the root of the project containing two key/val pairs:
+For this app to run properly, you will need to create a .env file at the root of the project containing these key/val pairs:
 
 REACT_APP_MAPBOX_API_KEY (a Mabox API key)
 REACT_APP_WEATHER_KEY (a Open Weather API key).
+REACT_APP_RANDOM_NUMBER_KEY = (Random API key)
+REACT_APP_RANDOM_REF_KEY = (Random API ref key)
 
 
 <!-- CONTACT -->
